@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="header">
+    <h1 style="display:inline">My Spring Boot Application</h1>
+    <div class="navbar">
+        <a th:href="@{/home}" >Home</a>
+        <a th:href="@{/employees}" >Employees</a>
+        <a th:href="@{/contact}" >Contact</a>
+
+    </div>
+</div>
+
+<!--<h2 style="text-align:center">Employee List</h2>-->
+<div class="container">
+<table id="employeeTable" style="width:100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sal</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="employee : ${employees}" th:data-id="${employee.id}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td data-field="salary">Sal</td>
+        <td><button th:data-param1="${employee.id}" th:onclick="updateSalary(this);">Update Salary</button>
+            <button onclick="copySalary(this)">Copy</button>
+        </td>
+    </tr>
+</table>
+
+</div>
+<div class="footer">
+    <p>Footer - Your Company Name</p>
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

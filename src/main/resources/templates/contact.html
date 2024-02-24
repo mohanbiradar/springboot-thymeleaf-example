@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="header">
+    <h1 style="display:inline">My Spring Boot Application</h1>
+    <div class="navbar">
+        <a th:href="@{/home}" >Home</a>
+        <a th:href="@{/employees}" >Employees</a>
+        <a th:href="@{/contact}" >Contact</a>
+
+    </div>
+</div>
+
+<div class="container">
+    <h2>Contact Information</h2>
+    <p>Email: info@example.com</p>
+    <p>Phone: +1234567890</p>
+    <p>Address: 123 Street, City, Country</p>
+</div>
+
+<!-- Add more cards as needed -->
+<div class="footer">
+    <p>Footer - Your Company Name</p>
+</div>
+</body>
+</html>
